@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Fine;
 use Illuminate\Http\Request;
 
 class FineController extends Controller
@@ -13,7 +14,8 @@ class FineController extends Controller
      */
     public function index()
     {
-        return view('admin.fine.index');
+        $users = Fine::getUsers();
+        return view('admin.fine.index',compact('users'));
     }
 
     /**

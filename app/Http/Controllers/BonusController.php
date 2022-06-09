@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bonus;
 use Illuminate\Http\Request;
 
 class BonusController extends Controller
@@ -13,7 +14,8 @@ class BonusController extends Controller
      */
     public function index()
     {
-        //
+        $users = Bonus::getUsers();
+        return view('admin.bonus.index', compact('users'));
     }
 
     /**

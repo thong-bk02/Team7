@@ -27,7 +27,7 @@
 <li class="nav-item">
     <a href="{{ route('admin.fine') }}" class="nav-link {{ Request::is('admin/fine') ? 'active' : '' }}">
         <i class="nav-icon fa-solid fa-sack-xmark"></i>
-        <p>Quản lí tiền phạt</p>
+        <p>Quản lí phạt</p>
     </a>
 </li>
 <li class="nav-item">
@@ -39,7 +39,7 @@
 <li class="nav-item">
     <a href="{{ route('admin.salary') }}" class="nav-link {{ Request::is('admin/salary') ? 'active' : '' }}">
         <i class="nav-icon fa-solid fa-money-bill-1-wave"></i>
-        <p>Quản lí tiền lương</p>
+        <p>Quản lí lương</p>
     </a>
 </li>
 <li class="nav-item">

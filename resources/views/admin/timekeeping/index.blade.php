@@ -23,7 +23,7 @@
                 </div>
             </div>
         </form>
-        <div class="mt-md-3 mt-2 usersList">
+        <div class="mt-md-3 mt-2">
             <table class="table table-sm table-secondary table-bordered table-hover">
                 <thead>
                     <tr class="bg-dark text-center">
