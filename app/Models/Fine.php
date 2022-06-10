@@ -15,6 +15,7 @@ class Fine extends Model
         ->join('fines', 'users.id', '=', 'fines.user_id')
         ->join('departments', 'users.department', '=', 'departments.id')
         ->select('users.*', 'fines.*','departments.room_name')
+        ->where('users.isadmin','=',null)
         ->orderBy('users.id')
         ->get();
         return $users;

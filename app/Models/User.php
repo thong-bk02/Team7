@@ -46,7 +46,8 @@ class User extends Authenticatable
     static function getUsers(){
         $users = DB::table('users')
             ->join('departments', 'users.department', '=', 'departments.id')
-            ->select('users.*', 'departments.room_name') //lấy tất cả các cột thì ta dùng:   users.*
+            ->select('users.*', 'departments.room_name')
+            ->where('users.isadmin','=',null) //không hiện admin
             ->get();
         return $users;
     }

@@ -38,8 +38,6 @@ class UsersController extends Controller
     {
         $input = $request->all();
 
-        // print_r($input);
-
         User::store($input);
         return redirect()->route('admin.user')->with('success', 'Thêm thành viên thành công');
     }

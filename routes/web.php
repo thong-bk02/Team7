@@ -4,6 +4,7 @@ use App\Http\Controllers\DepartmentsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BonusController;
 use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\FineController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\SalaryController;
@@ -64,10 +65,13 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('admin/fine', [FineController::class, 'index'])->name('admin.fine');
 
     #lịch làm việc
-    Route::get('admin/calender', [CalendarController::class, 'index'])->name('admin.calender');
+    Route::get('admin/calendar', [CalendarController::class, 'index'])->name('admin.calendar');
 
 });
 
-#Users Posts
-Route::view('/posts', 'user.posts.index')->name('posts');
+
+Route::get('calendar', [EventController::class, 'index'])->name('calendar.index');
+Route::post('calendar/create', [EventController::class, 'create'])->name('calendar.create');
+Route::patch('calendar/edit', [EventController::class, 'edit'])->name('calendar.edit');
+Route::delete('calendar/remove', [EventController::class, 'destroy'])->name('calendar.destroy');
 

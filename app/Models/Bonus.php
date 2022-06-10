@@ -15,6 +15,7 @@ class Bonus extends Model
         ->join('bonuss', 'users.id', '=', 'bonuss.user_id')
         ->join('departments', 'users.department', '=', 'departments.id')
         ->select('users.*', 'bonuss.*','departments.room_name')
+        ->where('users.isadmin','=',null)
         ->orderBy('users.id')
         ->get();
         return $users;

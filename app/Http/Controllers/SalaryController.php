@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Salary;
 use Illuminate\Http\Request;
+use Illuminate\Support\TValue;
 
 class SalaryController extends Controller
 {
@@ -13,7 +15,8 @@ class SalaryController extends Controller
      */
     public function index()
     {
-        //
+        $users = Salary::getUsers();
+        return view('admin.salary.index', compact('users'));
     }
 
     /**

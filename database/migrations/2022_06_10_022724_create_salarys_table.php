@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('fines', function (Blueprint $table) {
+        Schema::create('salarys', function (Blueprint $table) {
             $table->id();
 
             $table->unsignedBigInteger('user_id');
-            $table->date('penalty_day');
-            $table->string('penalty_reason');
-            $table->integer('total_fines');
+            $table->integer('basic_salary');
+            $table->integer('subsidize');
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->timestamps();
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fines');
+        Schema::dropIfExists('salarys');
     }
 };

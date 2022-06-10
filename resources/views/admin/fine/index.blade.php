@@ -24,7 +24,7 @@
             <div class="border border-2">
                 <div class="m-lg-3 m-0">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Họ và tên">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Họ và tên" name="name">
                     </div>
                     <div class="form-floating mb-3">
                         <select class="form-select w-100 text-center py-1" id="floatingSelect"
@@ -36,13 +36,7 @@
                         </select>
                     </div>
                     <div class="form-floating mb-3">
-                        <select class="form-select w-100 text-center py-1" id="floatingSelect"
-                            aria-label="Floating label select example">
-                            <option selected>Loại phạt</option>
-                            <option value="0">Quên chấm công</option>
-                            <option value="1">làm muộn</option>
-                            <option value="2">Trễ deadline</option>
-                        </select>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Lí do phạt" name="penalty_reason">
                     </div>
                     <div class="form-floating mb-3">
                         <label for="fine_date" class="w-100 text-center">Ngày phạt</label>
@@ -53,7 +47,7 @@
                         <input type="text" placeholder="000.000.000" name="total_fine">
                     </div>
                     <div class="text-center my-3">
-                        <button class="btn btn-primary px-5"> Lưu </button>
+                        <button type="submit" class="btn btn-primary px-5"> Lưu </button>
                     </div>
                 </div>
             </div>
@@ -77,8 +71,8 @@
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->room_name }}</td>
                             <td>{{ $user->penalty_day }}</td>
-                            <td>{{ $user->penalty_form }}</td>
-                            <td>{{ $user->total_fines }}</td>
+                            <td>{{ $user->penalty_reason }}</td>
+                            <td>{{ number_format($user->total_fines) }}</td>
                         </tr>
                     @endforeach
                 </tbody>

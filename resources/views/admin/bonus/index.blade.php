@@ -24,11 +24,11 @@
             <div class="border border-2">
                 <div class="m-lg-3 m-0">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Họ và tên">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Họ và tên" name="name">
                     </div>
                     <div class="form-floating mb-3">
                         <select class="form-select w-100 text-center py-1" id="floatingSelect"
-                            aria-label="Floating label select example">
+                            aria-label="Floating label select example" name="department">
                             <option selected>Phòng ban</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -36,18 +36,18 @@
                         </select>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Lí do thưởng">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Lí do thưởng" name="bonus_reason">
                     </div>
                     <div class="form-floating mb-3">
                         <label for="fine_date" class="w-100 text-center">Ngày thưởng</label>
-                        <input type="date" class="form-control" name="fine_date" id="fine_date" placeholder="Ngày phạt">
+                        <input type="date" class="form-control" name="bonus_date" id="bonus_date" placeholder="Ngày thưởng">
                     </div>
                     <div class="text-center">
-                        <label for="total_fine" class="w-100 text-center">Tổng tiền phạt</label>
-                        <input type="text" placeholder="000.000.000" name="total_fine">
+                        <label for="total_fine" class="w-100 text-center">Tổng tiền thưởng</label>
+                        <input type="text" placeholder="000.000.000" name="total_bonus">
                     </div>
                     <div class="text-center my-3">
-                        <button class="btn btn-primary px-5"> Lưu </button>
+                        <button type="submit" class="btn btn-primary px-5"> Lưu </button>
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                             <td>{{ $user->room_name }}</td>
                             <td>{{ $user->bonus_day }}</td>
                             <td>{{ $user->bonus_reason }}</td>
-                            <td>{{ $user->total_bonus }}</td>
+                            <td>{{ number_format($user->total_bonus) }}</td>
                         </tr>
                     @endforeach
                 </tbody>

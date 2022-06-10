@@ -6,7 +6,7 @@
     </a>
 </li>
 <li class="nav-item">
-    <a href="{{ route('admin.user') }}" class="nav-link {{ Request::is('admin/personnel') ? 'active' : '' }}">
+    <a href="{{ route('admin.user') }}" class="nav-link {{ Request::is('admin/user') ? 'active' : '' }}">
         <i class="nav-icon fa-solid fa-users"></i>
         <p>Quản lí nhân sự</p>
         
@@ -43,7 +43,7 @@
     </a>
 </li>
 <li class="nav-item">
-    <a href="{{ route('admin.calender') }}" class="nav-link {{ Request::is('admin/calendar') ? 'active' : '' }}">
+    <a href="{{ route('admin.calendar') }}" class="nav-link {{ Request::is('admin/calendar') ? 'active' : '' }}">
         <i class="nav-icon fa-solid fa-calendar-days"></i>
         <p>Lịch làm việc</p>
     </a>
