@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DepartmentsController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BonusController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\EventController;
@@ -75,3 +76,4 @@ Route::post('calendar/create', [EventController::class, 'create'])->name('calend
 Route::patch('calendar/edit', [EventController::class, 'edit'])->name('calendar.edit');
 Route::delete('calendar/remove', [EventController::class, 'destroy'])->name('calendar.destroy');
 
+Route::get('/articles',[ArticleController::class, 'index']); 
